@@ -1,0 +1,426 @@
+/* styles.css — new "Light Pastel" theme */
+:root{
+  --bg1:#f6f8fb;
+  --bg2:#ffffff;
+  --accent1:#7c3aed; /* purple */
+  --accent2:#06b6d4; /* teal */
+  --glass: rgba(15,23,42,0.04);
+  --muted: rgba(15,23,42,0.6);
+  --text:#0f1724;
+  --radius:12px;
+  --container:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:2rem}
+
+/* Header / Nav */
+.site-header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(255,255,255,0.7),transparent);backdrop-filter:blur(6px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-weight:700;color:var(--accent1);text-decoration:none;font-size:1.25rem}
+.brand .dot{color:var(--accent2)}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav-links a{color:var(--muted);text-decoration:none;padding:0.35rem 0.5rem;border-radius:8px;transition:all .18s}
+.nav-links a:hover{color:var(--text);background:rgba(124,58,237,0.06)}
+
+/* Background animated gradient and blobs (softer) */
+.bg{position:fixed;inset:0;z-index:-10;overflow:hidden}
+.blobs{width:120%;height:120%;transform:translate(-10%,-6%)}
+.blob{filter:blur(36px);transform-origin:center}
+.b1{fill:#ffd7f0;opacity:0.9;animation:float1 14s ease-in-out infinite}
+.b2{fill:#dff8ff;opacity:0.95;animation:float2 12s ease-in-out infinite}
+@keyframes float1{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
+@keyframes float2{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(16px) rotate(-5deg)}100%{transform:translateY(0) rotate(0)}}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 380px;align-items:center;gap:2rem;padding-top:3.5rem;padding-bottom:3.5rem}
+.title{font-size:2.2rem;margin:0 0 0.25rem}
+.title .name{color:var(--accent1);background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{margin:0 0 1rem;color:rgba(15,23,36,0.7)}
+
+/* typewriter-ish sliding words */
+.typewriter{width:320px;overflow:hidden;height:1.1rem;margin:0 0 1.2rem}
+.typewriter span{display:inline-block;white-space:nowrap;animation:slideWords 8s steps(3,end) infinite}
+@keyframes slideWords{0%{transform:translateY(0)}25%{transform:translateY(-1.1rem)}50%{transform:translateY(-2.2rem)}75%{transform:translateY(-1.1rem)}100%{transform:translateY(0)}}
+
+.cta{display:flex;gap:0.75rem}
+.btn{display:inline-block;padding:0.6rem 0.95rem;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;text-decoration:none;font-weight:600;box-shadow:0 8px 24px rgba(12,18,30,0.08);transition:transform .14s ease,box-shadow .14s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(12,18,30,0.12)}
+.btn.ghost{background:transparent;border:1px solid rgba(15,23,36,0.06);color:var(--muted)}
+
+/* Hero card */
+.hero-card{justify-self:end}
+  .card-inner{width:260px;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.92));padding:16px;border-radius:18px;backdrop-filter:blur(6px);box-shadow:0 14px 44px rgba(12,18,30,0.08);transform:translateY(6px);transition:transform .28s}
+.card-inner:hover{transform:translateY(-6px)}
+  .mock-screen{background:linear-gradient(135deg,#fff4e6,#ffe7f3);border-radius:12px;padding:10px;display:flex;justify-content:center;align-items:center;width:100%;aspect-ratio:1/1;border:2px solid rgba(124,58,237,0.06)}
+.mock-top{height:8px;background:rgba(15,23,36,0.06);border-radius:4000px;margin-bottom:10px}
+
+/* Profile photo (hero card) */
+.mock-content{display:block}
+  .profile-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+    box-shadow:0 12px 30px rgba(12,18,30,0.08);
+    border:2px solid rgba(12,18,30,0.06);
+  }
+
+/* smaller screens adjust photo height */
+@media (max-width:760px){
+  .profile-photo{height:180px;max-width:220px}
+}
+@media (max-width:400x){
+  .profile-photo{height:140px;max-width:180px}
+}
+
+/* Sections */
+section{padding:3rem 0}
+.about p{max-width:60ch;color:rgba(15,23,36,0.8)}
+
+/* Projects: make this section visually prominent */
+.projects{
+  padding:2.2rem 1.25rem;
+  background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(249,250,252,0.85));
+  border-radius:14px;
+  box-shadow:0 18px 48px rgba(12,18,30,0.04);
+  margin-top:1.25rem;
+}
+.projects .section-head{display:flex;flex-direction:column;gap:0.25rem;margin-bottom:0.8rem}
+.projects .section-head h2{font-size:1.6rem;margin:0}
+.projects .section-head .lead{margin:0;color:rgba(15,23,36,0.7);font-size:1rem}
+
+.projects .grid{display:grid;grid-template-columns:repeat(2,minmax(320px,420px));gap:0.9rem;margin-top:0.6rem;max-width:920px;margin-left:auto;margin-right:auto;justify-content:center;align-items:start;animation:sectionFadeUp .6s ease both}
+
+@keyframes sectionFadeUp{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+
+/* Make project thumbnails larger for impact and allow badge overlay */
+.card{position:relative}
+.card-media{position:relative;height:180px;background:linear-gradient(135deg,var(--accent2),var(--accent1));overflow:hidden}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block}
+/* .card-badge removed: small overlay badge not desired */
+/* Slightly tighter card spacing on very wide screens */
+.projects .grid{gap:0.85rem}
+
+/* When screen is narrow, fall back to single column */
+@media (max-width:900px){
+  .projects .grid{grid-template-columns:repeat(2,minmax(260px,1fr));max-width:680px}
+}
+@media (max-width:560px){
+  .projects .grid{grid-template-columns:1fr;max-width:100%}
+}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.95),transparent);border-radius:14px;padding:0;overflow:hidden;transition:transform .22s ease,box-shadow .22s;cursor:pointer;border:1px solid rgba(12,18,30,0.04)}
+.card:hover{transform:translateY(-8px);box-shadow:0 14px 34px rgba(12,18,30,0.06)}
+.card-media{position:relative;height:140px;background:linear-gradient(135deg,var(--accent2),var(--accent1));overflow:hidden}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block}
+
+.card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.card-body{padding:1rem}
+.card-body h3{margin:0 0 0.35rem}
+.card-body p{margin:0 0 0.65rem;color:rgba(15,23,36,0.7)}
+.card-body .link{color:var(--accent1);text-decoration:none;font-weight:600}
+
+/* Contact section */
+.contact{--card-bg:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.92));}
+.contact .contact-info{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;margin-top:0.75rem}
+.contact .contact-card{background:var(--card-bg);padding:0.9rem 1rem;border-radius:12px;display:flex;align-items:center;gap:0.75rem;border:1px solid rgba(12,18,30,0.04);box-shadow:0 8px 20px rgba(12,18,30,0.04)}
+.contact .contact-card strong{min-width:70px;display:inline-block;color:var(--text)}
+.contact .contact-card a{color:var(--accent1);text-decoration:none;font-weight:600}
+.contact .contact-card a:hover{text-decoration:underline}
+.contact .contact-card .icon{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;font-size:0.9rem}
+.contact .contact-card .icon svg{display:block}
+.contact .contact-text{display:flex;flex-direction:column}
+.contact .contact-card{transition:transform .18s ease,box-shadow .18s ease}
+.contact .contact-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(12,18,30,0.08)}
+
+/* mobile stack */
+@media (max-width:560px){
+  .contact .contact-info{flex-direction:column;align-items:flex-start}
+  .contact .contact-card{width:100%;justify-content:flex-start}
+}
+
+/* About: two-column layout with contact on the right */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:1.25rem;
+  align-items:start;
+  margin-top:0.6rem;
+}
+
+.about-text p{margin:0;color:rgba(15,23,36,0.8);max-width:60ch;line-height:1.6;text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+
+/* reuse existing contact-card styles; ensure right column stacks nicely */
+.about-contact{display:flex;flex-direction:column;gap:0.9rem}
+.about-contact .contact-card{width:100%;justify-content:flex-start}
+
+/* Friendly contact styles for right column */
+.about-contact .contact-card{
+  display:flex;
+  gap:0.85rem;
+  align-items:center;
+  padding:0.7rem 0.95rem;
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96));
+  border-radius:12px;
+  border:1px solid rgba(12,18,30,0.04);
+  box-shadow:0 8px 20px rgba(12,18,30,0.03);
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+}
+.about-contact .contact-card .icon{
+  width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;color:#fff;font-weight:700;
+  background:linear-gradient(90deg,var(--accent2),var(--accent1));flex:0 0 44px
+}
+.about-contact .contact-card .icon svg{width:18px;height:18px}
+
+/* Remove logo/icon visuals from contact cards (user requested no logos) */
+.contact .contact-card .icon,
+.about-contact .contact-card .icon{display:none !important}
+
+/* When icon is removed, reduce gap to keep compact appearance */
+.contact .contact-card,
+.about-contact .contact-card{gap:0.5rem}
+.about-contact .contact-text{display:flex;flex-direction:column}
+.about-contact .contact-text strong{font-size:0.95rem;color:var(--text);font-weight:700}
+.about-contact .contact-text a{color:var(--accent1);text-decoration:none;font-weight:600}
+.about-contact .contact-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(12,18,30,0.06);border-color:rgba(124,58,237,0.12)}
+
+/* compact layout on small screens */
+@media (max-width:560px){
+  .about-contact{flex-direction:row;flex-wrap:wrap;gap:0.6rem}
+  .about-contact .contact-card{width:auto;padding:0.5rem 0.65rem}
+  .about-contact .contact-card .icon{width:36px;height:36px;flex:0 0 36px}
+  .about-contact .contact-text strong{font-size:0.88rem}
+}
+
+/* Responsive: stack on small screens */
+@media (max-width:980px){
+  .about-grid{grid-template-columns:1fr;gap:1rem}
+  .about-contact{order:2}
+}
+@media (max-width:560px){
+  .about-contact{flex-direction:row;flex-wrap:wrap;gap:0.6rem}
+  .about-contact .contact-card{width:auto;padding:0.6rem 0.8rem}
+}
+
+/* Footer */
+.site-footer{padding:1.5rem 0;color:rgba(15,23,36,0.6)}
+
+/* Utility */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Skills section */
+.skills h2{margin:0 0 1rem}
+.skills-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.75rem;
+  margin-top:0.75rem;
+  align-items:center;
+  align-content:start;
+}
+
+.skill-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  padding:0.45rem 0.9rem;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff;
+  font-weight:600;
+  font-size:0.98rem;
+  box-shadow:0 8px 28px rgba(124,58,237,0.08);
+  border:1px solid rgba(12,18,30,0.06); /* subtle frame */
+  transition:transform .12s ease,box-shadow .12s ease,opacity .12s;
+  cursor:pointer;
+  outline: none;
+}
+
+/* remove default focus outline, provide visible focus-visible ring */
+.skill-badge:focus{outline:none}
+.skill-badge:focus-visible{
+  box-shadow:0 10px 30px rgba(124,58,237,0.12), 0 0 0 4px rgba(124,58,237,0.08);
+  border-color:rgba(124,58,237,0.18);
+}
+
+/* hover/active micro-interactions */
+.skill-badge:hover{transform:translateY(-4px);opacity:0.98}
+.skill-badge:active{transform:translateY(-1px);box-shadow:0 6px 18px rgba(12,18,30,0.06)}
+
+/* subtle leading dot/icon on badges for visual rhythm */
+.skill-badge::before{
+  content:'';
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,0.9);
+  display:inline-block;
+  box-shadow:0 1px 0 rgba(0,0,0,0.06) inset;
+  flex:0 0 auto;
+}
+
+/* compact on small screens */
+@media (max-width:560px){
+  .skill-badge{padding:0.38rem 0.7rem;font-size:0.92rem}
+  .skills-grid{gap:0.5rem}
+}
+
+/* Descriptions for clickable skills */
+.skills-descs{display:none} /* hide inline descriptions to avoid reserving space */
+
+/* Modal popup for skill details (themed + animated) */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg, rgba(6,12,30,0.28), rgba(6,12,30,0.42));
+  z-index:1200;
+  padding:2rem;
+  /* use opacity + pointer-events for smooth enter/exit */
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .28s ease;
+}
+.modal-overlay.open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* modal card */
+.modal{
+  background: linear-gradient(180deg,#ffffff,#fffafc);
+  max-width:680px;
+  width:100%;
+  border-radius:16px;
+  padding:1.15rem 1.25rem;
+  box-shadow:0 30px 80px rgba(8,12,30,0.35);
+  border:1px solid rgba(12,18,30,0.06);
+  /* entrance animation */
+  transform:translateY(10px) scale(.98);
+  opacity:0;
+  transition:transform .28s cubic-bezier(.2,.9,.25,1), opacity .28s ease;
+}
+
+/* when overlay open, animate modal into place */
+.modal-overlay.open .modal{
+  transform:translateY(0) scale(1);
+  opacity:1;
+}
+
+/* header */
+.modal-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.modal-header strong{
+  font-size:1.05rem;
+  color:var(--text);
+  /* subtle accent gradient for title */
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* body text */
+.modal-body{
+  margin-top:0.6rem;
+  color:rgba(12,18,30,0.9);
+  line-height:1.6;
+  font-size:0.98rem;
+}
+
+/* Project content inside modal: make left and right edges align (justify) and add symmetric padding */
+.modal-body .project-content{padding:0 0.2rem}
+.modal-body .project-content p,
+.modal-body .project-content ul{ text-align:justify; margin:0.6rem 0 }
+.modal-body .project-content ul{padding-left:1.15rem}
+.modal-body .project-content strong{display:block;margin-bottom:0.45rem}
+
+/* Fallback: ensure any paragraph or list inside modal is justified
+   (used when project fragment is injected without .project-content wrapper) */
+.modal-body p,
+.modal-body ul{
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+/* close button — matches site buttons but compact */
+.modal-close{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff;
+  border:none;
+  padding:0.35rem 0.6rem;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:0.95rem;
+  line-height:1;
+  box-shadow:0 10px 28px rgba(124,58,237,0.12);
+  transition:transform .14s ease,box-shadow .14s,opacity .14s;
+}
+.modal-close:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(12,18,30,0.12)}
+.modal-close:focus{outline:2px solid rgba(124,58,237,0.18);outline-offset:3px}
+
+/* accessibility: visually-hidden label fallback handled in HTML */
+/* prevent background scroll when modal open; JS toggles this class on body */
+body.modal-open{overflow:hidden}
+
+/* responsive tweaks */
+@media (max-width:560px){
+  .modal{padding:0.9rem;border-radius:12px}
+  .modal-body{font-size:0.95rem}
+  .modal-close{padding:0.3rem 0.5rem;font-size:0.92rem}
+}
+
+/* Responsive layout adjustments */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;gap:1rem}
+  .hero-card{order:2}
+  .projects .grid{grid-template-columns:repeat(2,1fr)}
+  .contact-form{grid-template-columns:1fr}
+  .contact-form textarea{grid-column:auto}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:760px){
+  .card-inner{width:220px}
+  .profile-photo{border-radius:10px}
+}
+
+@media (max-width:560px){
+  .nav-links{display:none}
+  .title{font-size:1.6rem}
+  .projects .grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:420px){
+  .card-inner{width:200px}
+  .profile-photo{border-radius:8px}
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .blobs,.blob,.card-inner,.btn{animation:none;transition:none}
+}
+
+/* Carousel inside modal (UMKM photos) */
+.carousel{width:100%;overflow:hidden;border-radius:10px;margin:0.6rem 0 0.9rem;border:1px solid rgba(12,18,30,0.04);background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.96))}
+.carousel-track{display:flex;transition:transform .35s ease;will-change:transform}
+.carousel-slide{flex:0 0 100%;display:block}
+.carousel-slide img{display:block;width:100%;height:auto;object-fit:cover;border-radius:8px}
+
+/* pause sliding when user hovers modal */
+.modal .carousel:hover .carousel-track{transition:none}

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portofolio sederhana dengan animasi — dibuat menggunakan HTML & CSS" />
+  <title>Portofolio — Chandra Kurnia Santoso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#">Porto<span class="dot">.</span></a>
+      <ul class="nav-links">
+  
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Animated gradient background + blobs -->
+  <div class="bg">
+    <svg class="blobs" viewBox="0 0 800 600" preserveAspectRatio="none" aria-hidden="true">
+      <g fill-opacity="0.7">
+        <path class="blob b1" d="M421,57Q470,114,459,186Q448,258,388,299Q328,340,269,309Q210,278,168,226Q126,174,153,108Q180,42,245,41Q310,40,421,57Z"></path>
+        <path class="blob b2" d="M650,381Q632,448,583,487Q534,526,473,520Q412,514,375,468Q338,422,300,384Q262,346,275,299Q288,252,337,219Q386,186,442,197Q498,208,588,260Q678,312,650,381Z"></path>
+      </g>
+    </svg>
+  </div>
+
+  <main>
+    <section id="hero" class="hero container">
+      <div class="hero-content">
+        <h1 class="title">Hai, saya <span class="name">Chandra Kurnia Santoso</span></h1>
+  <p class="subtitle">I'm a Computer Engineering undergraduate specializing in full-stack web development, and I’m also interested in exploring IoT-based systems.
+        <p class="typewriter" aria-hidden="true">
+          <span>Web Developer ·Frontend · Backend</span>
+        </p>
+
+        <div class="cta">
+          <a class="btn" href="#projects">My Projects</a> 
+          <a class="btn btn-secondary" href="#about">About Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <div class="card-inner">
+          <div class="mock-screen">
+            <div class="mock-top"></div>
+            <div class="mock-content">
+              <!-- Ganti file foto Anda: assets/photo.jpg -->
+              <img src="me.jpg" alt="Foto Chandra Kurnia Santoso" class="profile-photo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="projects" class="projects container">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p class="lead">Projects showcasing my growth in full-stack development</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-media" aria-hidden="true">
+            <img src="UMKM1.jpg" alt="UMKM Pempek Maknobel — screenshot" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>UMKM Pempek Maknobel</h3>
+            <p>Web-based management system for UMKM Pempek Maknobel.</p>
+            <a class="link project-view" href="#" data-project="project-a">View</a>
+          </div>
+        </article>
+
+        <article class="card">
+            <div class="card-media" aria-hidden="true">
+            <img src="POS1.jpg" alt="POS System — screenshot" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>POS System</h3>
+            <p>POS system with cashier & admin dashboards</p>
+            <a class="link project-view" href="#" data-project="project-b">View</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills" class="skills container">
+      <h2>My Skills</h2>
+      <div class="skills-grid" aria-label="Skills list">
+        <button class="skill-badge" data-skill="frontend" aria-expanded="false" type="button">Frontend</button>
+        <button class="skill-badge" data-skill="backend" aria-expanded="false" type="button">Backend</button>
+        <button class="skill-badge" data-skill="database" aria-expanded="false" type="button">Database</button>
+      </div>
+
+      <div class="skills-descs" aria-live="polite" style="display:none">
+        <!-- descriptions moved to separate file: project-descriptions.html and skill content is used from hidden elements for modal source -->
+        <div id="skill-frontend" class="skill-desc" data-skill="frontend">
+          <strong>Frontend</strong>
+          <p>Experienced in building responsive and interactive user interfaces using React.js, HTML, and CSS. 
+            Skilled in creating component-based layouts, managing state, and implementing clean UI patterns. 
+            I focus on accessibility, mobile-first design, reusable components, and delivering smooth user experiences through well-structured and maintainable code.</p>
+        </div>
+
+        <div id="skill-backend" class="skill-desc" data-skill="backend">
+          <strong>Backend</strong>
+          <p>Skilled in developing RESTful APIs and server-side logic using Laravel (PHP) or Node.js. 
+            Experienced with authentication and authorization flows, routing, database migrations, and data modeling. I focus on building secure, scalable, 
+            and maintainable backend services that integrate smoothly with frontend applications and hardware when needed.</p>
+        </div>
+
+        <div id="skill-database" class="skill-desc" data-skill="database">
+          <strong>Database</strong>
+          <p>Skilled in designing relational schemas and writing efficient queries using MySQL. 
+            Experienced with managing primary/foreign keys, creating table relationships, and handling operations such as insert, update, delete, and drop. Familiar with migrations, indexing, normalization, 
+            and basic optimization to maintain clean structure and good performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>About</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+           I’m a Computer Engineering undergraduate at Universitas Multimedia Nusantara with a 
+           strong interest in full-stack web development and IoT integration. I build responsive and interactive 
+           web applications using HTML, CSS, JavaScript/React, and develop stable backend systems with Laravel, Node.js, and MySQL.
+
+          My experience includes designing RESTful APIs, implementing authentication and authorization, managing relational databases, 
+          and connecting web systems to hardware for real-time data processing. I enjoy turning technical problems into practical 
+          solutions and working collaboratively to deliver clean, reliable, and maintainable applications.
+          </p>
+        </div>
+
+        <aside class="about-contact" aria-label="Contact details">
+          <div class="contact-card">
+            <span class="icon" aria-hidden="true">
+              <!-- envelope -->
+              <svg width="18" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M1 1.5H19V12.5H1V1.5Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 3L10 8.5L19 3" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="contact-text">
+              <strong>Email</strong>
+              <a href="mailto:chandrakurnia02@gmail.com">chandrakurnia02@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <span class="icon" aria-hidden="true">
+              <!-- phone -->
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M1 1.5C1 1.5 3 1 5 3C7 5 6.5 7.5 6.5 7.5C6.5 7.5 8 9 10 11C12 13 13 14 13 14" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3.5 12.5C4.5 13 5.5 13.5 6.8 13.8C8.2 14.1 9.6 14 10.6 13.6" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="contact-text">
+              <strong>Phone</strong>
+              <a href="tel:+6285255264868">+62 852-5526-4868</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <span class="icon" aria-hidden="true">
+              <!-- linkedin -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4.98 3.5C4.98 4.60457 4.09457 5.49 2.99 5.49C1.88543 5.49 1 4.60457 1 3.5C1 2.39543 1.88543 1.51 2.99 1.51C4.09457 1.51 4.98 2.39543 4.98 3.5Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div class="contact-text">
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/chandra-kurnia02" target="_blank" rel="noopener">linkedin.com/in/chandra-kurnia02</a>
+            </div>
+          </div>
+          </div>
+        </aside>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Chandra</div>
+  </footer>
+
+  <div class="modal-overlay" role="dialog" aria-hidden="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <strong id="modal-title"></strong>
+        <button class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    // Set copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Modal popup for skill descriptions + project details with carousel
+    (function(){
+      const buttons = document.querySelectorAll('.skill-badge');
+      const overlay = document.querySelector('.modal-overlay');
+      const modalTitle = document.getElementById('modal-title');
+      const modalBody = document.getElementById('modal-body');
+      const closeBtn = document.querySelector('.modal-close');
+      let lastFocused = null;
+      let carouselInterval = null;
+
+      function initCarouselInModal(){
+        // clear any previous interval
+        if(carouselInterval){ clearInterval(carouselInterval); carouselInterval = null; }
+
+        const carousel = modalBody.querySelector('.carousel');
+        if(!carousel) return;
+        const track = carousel.querySelector('.carousel-track');
+        const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        if(!track || slides.length <= 1) return;
+
+        // ensure starting position
+        let idx = 0;
+        const slideDelay = 1000; // ms between slides (was 2000)
+        const slideTransitionMs = 350; // transition duration (ms)
+        track.style.transform = 'translateX(0)';
+        // ensure a snappy transition (overrides CSS if needed)
+        track.style.transition = `transform ${slideTransitionMs}ms ease`;
+        // auto-advance every slideDelay ms
+        carouselInterval = setInterval(()=>{
+          idx = (idx + 1) % slides.length;
+          track.style.transform = `translateX(-${idx * 100}%)`;
+        }, slideDelay);
+
+        // pause on hover
+        carousel.addEventListener('mouseenter', ()=>{ if(carouselInterval){ clearInterval(carouselInterval); carouselInterval = null; }});
+        carousel.addEventListener('mouseleave', ()=>{ if(!carouselInterval){ carouselInterval = setInterval(()=>{ idx = (idx + 1) % slides.length; track.style.transform = 'translateX(-' + (idx * 100) + '%)'; }, 2000); }});
+      }
+
+      function openModal(title, html){
+        modalTitle.textContent = title;
+        modalBody.innerHTML = html;
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden','false');
+        document.body.classList.add('modal-open');
+        // initialize carousel if present
+        initCarouselInModal();
+        // trap focus: move focus to close button
+        closeBtn.focus();
+      }
+
+      function closeModal(){
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden','true');
+        document.body.classList.remove('modal-open');
+        // clear carousel interval
+        if(carouselInterval){ clearInterval(carouselInterval); carouselInterval = null; }
+        modalBody.innerHTML = '';
+        if(lastFocused) lastFocused.focus();
+      }
+
+      buttons.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const key = btn.getAttribute('data-skill');
+          const target = document.querySelector('.skill-desc[data-skill="'+key+'"]');
+          if(!target) return;
+          const titleEl = target.querySelector('strong');
+          const para = target.querySelector('p');
+          const title = titleEl ? titleEl.textContent : btn.textContent;
+          const html = para ? '<p>'+para.textContent+'</p>' : target.innerHTML;
+          lastFocused = btn;
+          openModal(title, html);
+        });
+        btn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); btn.click(); } });
+      });
+
+      // project "View" -> load detail from external HTML file and open modal
+      const projectLinks = document.querySelectorAll('.project-view');
+      projectLinks.forEach(link=>{
+        link.addEventListener('click', async (e)=>{
+          e.preventDefault();
+          const key = link.getAttribute('data-project');
+          if(!key) return;
+          try{
+            const resp = await fetch('project-descriptions.html');
+            if(!resp.ok) throw new Error('Network response was not ok');
+            const text = await resp.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const target = doc.querySelector('[data-project="'+key+'"]');
+            if(!target) return;
+            const titleEl = target.querySelector('strong');
+            const para = target.querySelector('p');
+            const list = target.querySelector('ul');
+            const carousel = target.querySelector('.carousel');
+            // include carousel markup (if any) plus paragraph/list
+            const html = (carousel?carousel.outerHTML:'') + (para?para.outerHTML:'') + (list?list.outerHTML:'');
+            lastFocused = link;
+            openModal(titleEl ? titleEl.textContent : 'Project', html);
+          }catch(err){
+            console.error('Failed to load project details', err);
+          }
+        });
+        link.addEventListener('keydown',(e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); link.click(); } });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      // click outside modal to close
+      overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeModal(); });
+      // esc to close
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+    })();
+  </script>
+</body>
+</html>
